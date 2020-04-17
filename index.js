@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
+var morgan = require('morgan')
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+
 let persons = [
     {
         name: "Arto Hellas",
